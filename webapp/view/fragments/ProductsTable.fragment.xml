@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+    <Dialog id="productsDialog" title="Detalles del Material">
+        <content>
+            <f:SimpleForm id="materialForm"
+                editable="false"
+                layout="ResponsiveGridLayout"
+                title="Información del Material"
+                labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+                adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
+                columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                <f:content>
+                    <Label text="Nombre del Producto" />
+                    <Text text="{ProductName}" />
+
+                    <Label text="ID del Producto" />
+                    <Text text="{ProductID}" />
+
+                    <Label text="Unidades en Stock" />
+                    <Text text="{UnitsInStock}" />
+
+                    <Label text="Precio Unitario" />
+                    <Text text="{UnitPrice}" />
+                </f:content>
+            </f:SimpleForm>
+        </content>
+        <beginButton>
+            <Button id="cerrar" text="Cerrar" press="CerrarDialogo" />
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

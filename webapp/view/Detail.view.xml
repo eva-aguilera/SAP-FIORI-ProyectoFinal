@@ -1,0 +1,81 @@
+<mvc:View controllerName="com.bootcamp.sapui5.projecto.controller.Detail"
+    
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:smartTable="sap.ui.comp.smarttable">
+    <Page title="{i18n>titleDetail}" >
+       <VBox id="dhb_01">
+            <f:SimpleForm id="SimpleFormDisplay354"
+                editable="false"
+                layout="ResponsiveGridLayout"
+                title="{i18n>Information}"
+                labelSpanXL="3" labelSpanL="3"
+                labelSpanM="3" labelSpanS="12"
+                adjustLabelSpan="false" emptySpanXL="4"
+                emptySpanL="4" emptySpanM="4" emptySpanS="0"
+                columnsXL="1" columnsL="1" columnsM="1"
+                singleContainerFullSize="false" >
+                <f:content>
+                    <Label id="ld_01" text="{i18n>CompanyName}" />
+                    <Text id="nameText" text="{CompanyName}" />
+
+                    <Label id="ld_02" text="{i18n>ContactName}" />
+                    <Text id="td_01" text="{ContactName}" />
+
+                    <Label id="ld_03" text="{i18n>Country}" />
+                    <Text id="td_02" text="{Country}" />
+
+                    <Label id="ld_04" text="{i18n>City}" />
+                    <Text id="countryText" text="{City}" />
+
+                    <Label id="ld_05" text="{i18n>Address}" />
+                    <Text id="addressText" text="{Address}" />
+
+                    <Label id="ld_06" text="{i18n>Phone}" />
+                    <Text id="phoneText" text="{Phone}" />
+
+                    <Label id="ld_07" text="{i18n>Fax}" />
+                    <Text id="faxText" text="{Fax}" />
+
+                    <Label id="ld_08" text="{i18n>HomePage}" />
+                    <Link id="homePageLink" text="{HomePage}" href="{HomePage}" target="_blank" />
+
+                    </f:content>
+            </f:SimpleForm>
+
+            <smartTable:SmartTable
+    
+    entitySet="Products"
+    
+    tableBindingPath="Products"
+    initiallyVisibleFields="ProductName, QuantityPerUnit, UnitPrice, UnitsInStock"
+    tableType="ResponsiveTable"
+    enableExport="true"
+    useVariantManagement="false"
+    useTablePersonalisation="true"
+    header="{i18n>headerMaterials}"
+    showRowCount="true"
+    showFullScreenButton="true"
+    enableAutoBinding="true"
+    class="sapUiResponsiveContentPadding"
+    enableAutoColumnWidth="true"
+    editTogglable="false"
+    
+    > <Table>
+		<ColumnListItem type="Navigation"  press="AbrirDialogo">
+		</ColumnListItem>
+	</Table>	
+    <smartTable:customToolbar>
+     <Toolbar>
+     
+         <Button id="dialogButton" 
+        text="Crear un material" press="Dialog" 
+        class="sapUiSmallMarginEnd"/>
+        </Toolbar>
+    </smartTable:customToolbar>
+</smartTable:SmartTable>
+        </VBox>
+
+    </Page>
+</mvc:View>
