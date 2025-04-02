@@ -1,7 +1,6 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "com/bootcamp/sapui5/projecto/utils/HomeHelper",
-    "sap/m/MessageToast",
     "sap/ui/core/Fragment"
 ], (Controller, HomeHelper, MessageToast, Fragment) => {
     "use strict";
@@ -23,7 +22,9 @@ sap.ui.define([
                 }
             });
         },
-        
+        //los dialogos funcionan pero se necesita recargar los datos,
+        //ya que no se logro cerrar el dialogo por completo
+        //buscar alguna forma de como validar que el dialogo se cerro completamente
         AbrirDialogo: function (oEvent) {
             let oView = this.getView();
             let oSelectedItem = oEvent.getSource();
@@ -84,7 +85,8 @@ sap.ui.define([
                 });
             }
         },
-
+//esta funcion guarda el nuevo producto dentro de un array
+//intentar agregar el array al modelo para luego mostrarlo?
         Guardarinput: async function () {
             var nombreInput = this.byId("nombre").getValue();
             var descripcionTextArea = this.byId("descripcion").getValue();
